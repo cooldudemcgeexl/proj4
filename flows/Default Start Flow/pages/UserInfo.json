@@ -1,0 +1,72 @@
+{
+  "name": "21876f91-1a29-4ae3-8774-903db01c465d",
+  "displayName": "UserInfo",
+  "form": {
+    "parameters": [ {
+      "displayName": "userFirstName",
+      "required": true,
+      "entityType": "@sys.given-name",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "First, can you give me your first name?" ]
+            },
+            "languageCode": "en"
+          } ]
+        }
+      }
+    }, {
+      "displayName": "userLastName",
+      "required": true,
+      "entityType": "@sys.any",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "Next, can I have your last name?" ]
+            },
+            "languageCode": "en"
+          } ]
+        }
+      }
+    }, {
+      "displayName": "userEmail",
+      "required": true,
+      "entityType": "@sys.email",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "Can you give me your email address?" ]
+            },
+            "languageCode": "en"
+          } ]
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Before we get started, I'll need some information from you. " ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$page.params.status = \"FINAL\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "VerifyUserInfo",
+    "name": "61fb4743-7546-44ce-9533-8213397f01fc"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+    
+    },
+    "name": "4c05524b-9b8e-44e8-9a7c-f20ac8e45c6b"
+  } ]
+}

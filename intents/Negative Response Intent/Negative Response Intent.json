@@ -1,0 +1,6 @@
+{
+  "name": "726031c6-82db-42e6-92f3-c5c6b65b71ae",
+  "displayName": "Negative Response Intent",
+  "priority": 500000,
+  "description": "User responds negatively"
+}

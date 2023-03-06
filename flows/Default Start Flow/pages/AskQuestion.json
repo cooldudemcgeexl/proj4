@@ -1,0 +1,76 @@
+{
+  "name": "2fe72e3c-f894-48ba-bed4-536e9bf0aaa6",
+  "displayName": "AskQuestion",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "What did you want to know about UC?" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "Football Intent",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "The University of Cincinnati Bearcats are a Division I NCAA football team. The Bearcats currently play in the Big 12 conference.\n\nFor more info, see: https://gobearcats.com/sports/football" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "ContinueAskingQuestions",
+    "name": "08f080f5-5af0-4644-9d57-8c1cb6f36a7f"
+  }, {
+    "intent": "CompSci Intent",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "UC's CEAS offers a Bachelor's of Science in Computer Science. For more information, look here: https://ceas.uc.edu/academics/departments/computer-science.html" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "ContinueAskingQuestions",
+    "name": "2f1b71f2-b5d0-4515-98d6-cbfa3b295f90"
+  }, {
+    "intent": "Tuition Intent",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "For the 2022-2023 tuition cohort, UC's tuition rates per semester are as follows:\nIn-state: $6,588.00\nOut-of-state: $14,255.00\n\nFor more info see: https://www.uc.edu/about/bursar/tuition-fees.html" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "ContinueAskingQuestions",
+    "name": "bb643eb5-9579-47ef-9607-d2d286c0a671"
+  }, {
+    "intent": "Housing Intent",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "For the 2022-2023 cohort, housing costs start at $3,821 per semester. More information can be found here: https://www.uc.edu/campus-life/housing/apply/rates/2022-23-cohort.html" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "ContinueAskingQuestions",
+    "name": "27827461-a36a-4c59-a5ef-638740cd1b74"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I don't quite understand your question. I know about the following topics:\n- Football team\n- Computer Science\n- Tuition Prices\n- On-Campus Housing Prices" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "a4995158-0794-4258-9329-0ec325699145"
+  } ]
+}

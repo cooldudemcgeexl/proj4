@@ -1,0 +1,50 @@
+{
+  "name": "c072f920-5a99-46ed-bee5-55973c14833b",
+  "displayName": "VerifyUserInfo",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Just to make sure I have everything correct, I have the following information about you:\nFirst Name: $session.params.userfirstname\nLast Name: $session.params.userlastname\nEmail Address: $session.params.useremail\n\nIs this correct?" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "Positive Response Intent",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Thanks, $session.params.userfirstname!" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "AskQuestion",
+    "name": "aac67452-ad91-4fff-8e1f-8eb7f0038001"
+  }, {
+    "intent": "Negative Response Intent",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, let's try this again!" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "userfirstname",
+        "value": null
+      }, {
+        "parameter": "userlastname",
+        "value": null
+      }, {
+        "parameter": "useremail",
+        "value": null
+      } ]
+    },
+    "targetPage": "UserInfo",
+    "name": "163f1dde-d5cc-4203-a075-734768103fe0"
+  } ]
+}

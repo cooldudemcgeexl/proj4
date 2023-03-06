@@ -1,0 +1,37 @@
+{
+  "name": "25b526e6-cf59-44f6-be5e-0216bc717dc0",
+  "displayName": "DisplayInfoFinal",
+  "form": {
+    "parameters": [ {
+      "displayName": "anyparam",
+      "required": true,
+      "entityType": "@sys.any",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Your information:\nFirst Name: $session.params.userfirstname\nLast Name: $session.params.userlastname\nEmail Address: $session.params.useremail\n\nThis Chatbot was created by:\nNick Lay\nlayns@mail.uc.edu" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$page.params.anyparam : \"\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Thanks for chatting!" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "End Session",
+    "name": "352bd5ff-6af8-4101-863f-7c32a739534c"
+  } ]
+}
